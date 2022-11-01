@@ -1,0 +1,59 @@
+@import './_variables.scss';
+@import './normalize.scss';
+
+@font-face {
+  font-family: 'Nunito-Regular';
+  src: url('../../app/fonts/nunito/Nunito-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Nunito-Bold';
+  src: url('../../app/fonts/nunito/Nunito-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: $font-regular;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.container {
+  padding: $pd-y $pd-x;
+  max-width: $max-width;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: $pd-y-m $pd-x-m;
+  }
+}
