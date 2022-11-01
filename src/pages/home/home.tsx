@@ -1,8 +1,16 @@
 import React, { FC } from 'react';
-import './home.module.scss';
+import s from './home.module.scss';
+import m from './../../app/styles/main.module.scss';
+import Header from '../../components/header/Header';
 
-const home: FC = () => {
-  return <div>home</div>;
+const Home: FC = () => {
+  return (
+    <div className={s.wrapper}>
+      <div className={m.container}>
+        <Header />
+      </div>
+    </div>
+  );
 };
 
-export default home;
+export default Home;
