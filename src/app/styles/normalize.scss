@@ -28,7 +28,7 @@ main {
  */
 
 h1 {
-  font-size: 2em;
+  font-size: 6rem;
   margin: 0.67em 0;
 }
 
@@ -163,6 +163,7 @@ textarea {
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
+  cursor: pointer;
 }
 
 /**
