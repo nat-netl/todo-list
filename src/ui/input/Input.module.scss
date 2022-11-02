@@ -1,0 +1,13 @@
+@import '../../app/styles/_variables.scss';
+
+.input {
+  padding: 5px 5px 5px 15px;;
+  color: $transparent-text-color;
+  border: none;
+  outline: none;
+  width: 100%;
+
+  &::-webkit-input-placeholder {
+    color: $transparent-text-color;
+  }
+}
