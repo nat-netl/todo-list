@@ -1,0 +1,21 @@
+@import './../../app/styles/_variables.scss';
+
+.wrapper {
+  .todos {
+    -webkit-box-shadow: 0px 5px 15px 1px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 15px 1px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 15px 1px rgba(34, 60, 80, 0.2);
+  }
+  .step {
+    height: 5px;
+    background: $white-color;
+    margin: 0 auto;
+    width: 99%;
+    -webkit-box-shadow: 0px 5px 15px 1px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 15px 1px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 15px 1px rgba(34, 60, 80, 0.2);
+    &:last-child {
+      width: 98%;
+    }
+  }
+}
