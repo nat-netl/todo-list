@@ -1,0 +1,32 @@
+@import './../../app/styles/_variables.scss';
+.item {
+  border-bottom: 1px solid $main-bg-color;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__done {
+    color: #c4e0d9;
+    outline: 1px solid #dcdfde;
+    border-radius: 100%;
+  }
+
+  &__ndone {
+    width: 24px;
+  }
+
+  &__task__name {
+    margin-left: 25px;
+    cursor: pointer;
+    color: $text-color;
+  }
+  
+  &__task__name__strikethrough {
+    text-decoration-line: line-through;
+    text-decoration-style: solid;
+    color: $transparent-text-color;
+  }
+}

@@ -1,0 +1,31 @@
+@import './../../app/styles/_variables.scss';
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: $white-color;
+  padding: 10px;
+
+  .by__state button {
+    margin-right: 15px;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .by__state button, 
+  .clear__completed button {
+    border: 1px solid transparent;
+    border-radius: 3px; 
+    padding: 5px;   
+    &:hover {
+      border: 1px solid $light-gray;
+    }
+  } 
+
+  div {
+    display: inherit;
+  }
+}

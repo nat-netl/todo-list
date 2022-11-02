@@ -1,0 +1,13 @@
+@import '../../app/styles/_variables.scss';
+
+.add__task {
+  background-color: $white-color;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  margin-bottom: 1px;
+  
+  .arrow_down {
+    height: 100%;
+  }
+}
