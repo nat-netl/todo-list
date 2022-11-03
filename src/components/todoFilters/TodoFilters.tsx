@@ -1,5 +1,5 @@
 import React from 'react';
-import FilterButton from '../../ui/button/Button';
+import Button from '../../ui/button/Button';
 import s from './TodoFilters.module.scss';
 
 const TodoFilters = () => {
@@ -8,15 +8,15 @@ const TodoFilters = () => {
   return (
     <div className={s.filters}>
       <div className={s.count__items__left}>
-        <FilterButton className={s.button}>{itemsLeft} items left</FilterButton>
+        <Button>{itemsLeft} items left</Button>
       </div>
       <div className={s.by__state}>
-        <FilterButton className={s.button}>All</FilterButton>
-        <FilterButton className={s.button}>Active</FilterButton>
-        <FilterButton className={s.button}>Completed</FilterButton>
+        <Button>All</Button>
+        <Button>Active</Button>
+        <Button>Completed</Button>
       </div>
       <div className={s.clear__completed}>
-        <FilterButton className={s.button}>Clear completed</FilterButton>
+        <Button>Clear completed</Button>
       </div>
     </div>
   );
