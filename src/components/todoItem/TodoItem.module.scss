@@ -8,23 +8,29 @@
     border-bottom: none;
   }
 
-  &__done {
+  
+  .status {
     color: #c4e0d9;
-    outline: 1px solid #dcdfde;
+    outline: 1px solid $transparent-text-color;
+    border-radius: 100%;
+    font-size: '26px';
+    rotate: '-10deg';
+  }
+
+  .nstatus {
+    width: 24px;
+    height: 24px;
+    outline: 1px solid $transparent-text-color;
     border-radius: 100%;
   }
 
-  &__ndone {
-    width: 24px;
-  }
-
-  &__task__name {
+  .task__name {
     margin-left: 25px;
     cursor: pointer;
     color: $text-color;
   }
   
-  &__task__name__strikethrough {
+  .task__name__strikethrough {
     text-decoration-line: line-through;
     text-decoration-style: solid;
     color: $transparent-text-color;
