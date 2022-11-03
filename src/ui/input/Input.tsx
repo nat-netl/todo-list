@@ -7,6 +7,7 @@ interface InputTextProps {
   value: string;
   className?: string;
   placeholder?: string;
+  onChange: (e) => void;
   rest?: RestTypeNode;
 }
 

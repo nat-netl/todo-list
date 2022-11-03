@@ -1,28 +1,19 @@
 import React from 'react';
-import { TodoItemProps } from '../../types/types';
+import { useAppSelector } from '../../hooks/actions';
 import TodoItem from '../todoItem/TodoItem';
 import s from './TodoList.module.scss';
 
 const TodoList = () => {
-  const todoList: TodoItemProps[] = [
-    {
-      id: 0,
-      name: 'Абчихба',
-      done: 'complete',
-    },
-    {
-      id: 1,
-      name: 'Абчихба',
-      done: 'uncomplete',
-    },
-  ];
+  const todoList = useAppSelector((state) => state.todos.todoList);
 
   return (
     <div className={s.todo__list}>
       <div className={s.todo__items}>
-        {todoList.length
-          ? todoList.map((task) => <TodoItem key={task.id} id={task.id} name={task.name} done={task.done} />)
-          : 'Список задач пуст'}
+        {todoList.length ? (
+          todoList.map((task) => <TodoItem key={task.id} id={task.id} task={task.task} status={task.status} />)
+        ) : (
+          <div className={s.todo__is__empty}>Список задач пуст</div>
+        )}
       </div>
     </div>
   );

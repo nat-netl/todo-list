@@ -7,6 +7,17 @@
   background: $white-color;
   padding: 10px;
 
+  button {
+    font-size: 14px;
+    color: $light-gray;
+    border: 1px solid transparent;
+    border-radius: 3px; 
+    padding: 5px;  
+    &:hover {
+      border: 1px solid $light-gray;
+    }
+  }
+
   .by__state button {
     margin-right: 15px;
     
@@ -14,16 +25,6 @@
       margin-right: 0;
     }
   }
-
-  .by__state button, 
-  .clear__completed button {
-    border: 1px solid transparent;
-    border-radius: 3px; 
-    padding: 5px;   
-    &:hover {
-      border: 1px solid $light-gray;
-    }
-  } 
 
   div {
     display: inherit;

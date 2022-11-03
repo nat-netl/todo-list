@@ -1,5 +1,5 @@
 export interface TodoItemProps {
   id: number;
-  name: string;
-  done: string;
+  task: string;
+  status?: 'complete' | 'incomplete';
 }
