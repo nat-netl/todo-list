@@ -2,17 +2,17 @@ import React, { FC } from 'react';
 import s from './Button.module.scss';
 import { getClasses } from '../../utils/getClasses';
 
-interface FilterButtonProps {
+interface ButtonProps {
   children: any;
   className?: string;
 }
 
-const FilterButton: FC<FilterButtonProps> = ({ children, className }) => {
+const Button: FC<ButtonProps> = ({ children, className, ...rest }) => {
   return (
-    <button type='submit' className={getClasses([s.filter__button, className])}>
+    <button type='submit' className={getClasses([s.filter__button, className])} {...rest}>
       {children}
     </button>
   );
 };
 
-export default FilterButton;
+export default Button;
