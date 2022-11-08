@@ -2,10 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TodoItemProps } from '../../types/types';
 
 interface initialState {
+  filterStatus: string;
   todoList: TodoItemProps[];
 }
 
 const initialState: initialState = {
+  filterStatus: 'all',
   todoList: JSON.parse(localStorage.getItem('todoList') ?? '[]'),
 };
 
@@ -18,7 +20,7 @@ export const todosSlice = createSlice({
       localStorage.setItem('todoList', JSON.stringify(state.todoList));
     },
     updateStatus: (state, action) => {
-      const todoList = window.localStorage.getItem('todoList');
+      const todoList = localStorage.getItem('todoList');
       if (todoList) {
         const todoListArr = JSON.parse(todoList);
         todoListArr.forEach((task) => {
@@ -30,9 +32,18 @@ export const todosSlice = createSlice({
         state.todoList = todoListArr;
       }
     },
+    updateFilterStatus: (state, action) => {
+      state.filterStatus = action.payload.toLowerCase();
+    },
+    clearCompletedTodo: (state) => {
+      const clearCompletedTodoArr = state.todoList.filter((task) => task.status === 'active');
+      state.todoList = clearCompletedTodoArr;
+      localStorage.setItem('todoList', JSON.stringify(clearCompletedTodoArr));
+      console.log(state.todoList);
+    },
   },
 });
 
-export const { addTodo, updateStatus } = todosSlice.actions;
+export const { addTodo, updateStatus, updateFilterStatus, clearCompletedTodo } = todosSlice.actions;
 export const todosActions = todosSlice.actions;
 export const todosReducer = todosSlice.reducer;

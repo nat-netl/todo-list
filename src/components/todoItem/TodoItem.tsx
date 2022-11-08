@@ -11,10 +11,8 @@ const TodoItem: FC<TodoItemProps> = ({ id, task, status }) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    status === 'complete' ? setTaskStatus(true) : setTaskStatus(false);
+    status === 'completed' ? setTaskStatus(true) : setTaskStatus(false);
   }, [status]);
-
-  console.log(taskStatus);
 
   const handleCheckTask = () => {
     setTaskStatus(!taskStatus);
@@ -22,18 +20,18 @@ const TodoItem: FC<TodoItemProps> = ({ id, task, status }) => {
       updateStatus({
         id,
         task,
-        status: taskStatus ? 'incomplete' : 'complete',
+        status: taskStatus ? 'active' : 'completed',
       }),
     );
   };
 
   return (
     <div className={s.item}>
-      {status === 'complete' ? <DoneIcon className={s.status} /> : <span className={s.nstatus}></span>}
+      {status === 'completed' ? <DoneIcon className={s.status} /> : <span className={s.nstatus}></span>}
 
       <div
         onClick={handleCheckTask}
-        className={getClasses([s.task__name, status === 'complete' && s.task__name__strikethrough])}
+        className={getClasses([s.task__name, status === 'completed' ? s.task__name__strikethrough : null])}
       >
         {task}
       </div>

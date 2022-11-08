@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import s from './AddTask.module.scss';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Input from '../../ui/input/Input';
-import Button from '../../ui/button/Button';
+import InputSubmit from '../../ui/inputSubmit/InputSubmit';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { useAppDispatch } from '../../hooks/actions';
 import { addTodo } from '../../store/todos/todos.slice';
@@ -21,7 +21,7 @@ const AddTask = () => {
         addTodo({
           id: uuid(),
           task,
-          status: 'incomplete',
+          status: 'active',
         }),
       );
       setTask('');
@@ -45,9 +45,9 @@ const AddTask = () => {
         />
 
         {task && (
-          <Button className={s.add__btn}>
+          <button type='submit' className={s.add__btn}>
             <ArrowRightAltIcon className={s.add__btn__icon} />
-          </Button>
+          </button>
         )}
       </form>
     </div>

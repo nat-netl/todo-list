@@ -7,7 +7,16 @@
   background: $white-color;
   padding: 10px;
 
-  button {
+  .count__items__left {
+    font-size: 14px;
+    color: $light-gray;
+  }
+
+  .active__filter {
+    border: 1px solid $light-gray;
+  }
+
+  input {
     font-size: 14px;
     color: $light-gray;
     border: 1px solid transparent;
@@ -18,7 +27,7 @@
     }
   }
 
-  .by__state button {
+  .by__state input {
     margin-right: 15px;
     
     &:last-child {
